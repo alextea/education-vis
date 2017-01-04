@@ -1391,7 +1391,7 @@ $(document).ready(function() {
           .attr("transform", function(d) {
               return "translate(" + source.y0 + "," + source.x0 + ")";
           })
-          .on('click', click);
+          // .on('click', click);
 
       nodeEnter.append("circle")
           .attr('class', 'nodeCircle')
@@ -1415,18 +1415,18 @@ $(document).ready(function() {
           .style("fill-opacity", 0);
 
       // phantom node to give us mouseover in a radius around it
-      nodeEnter.append("circle")
-          .attr('class', 'ghostCircle')
-          .attr("r", 30)
-          .attr("opacity", 0.2) // change this to zero to hide the target area
-      .style("fill", "red")
-          .attr('pointer-events', 'mouseover')
-          .on("mouseover", function(node) {
-              overCircle(node);
-          })
-          .on("mouseout", function(node) {
-              outCircle(node);
-          });
+      // nodeEnter.append("circle")
+      //     .attr('class', 'ghostCircle')
+      //     .attr("r", 30)
+      //     .attr("opacity", 0.2) // change this to zero to hide the target area
+      // .style("fill", "red")
+      //     .attr('pointer-events', 'mouseover')
+      //     .on("mouseover", function(node) {
+      //         overCircle(node);
+      //     })
+      //     .on("mouseout", function(node) {
+      //         outCircle(node);
+      //     });
 
       // Update the text to reflect whether node has children or not.
       node.select('text')
@@ -1437,7 +1437,7 @@ $(document).ready(function() {
               return "start";
           })
           .text(function(d) {
-              return d.name+" ("+d.number_of_tagged_content+" / "+d.number_of_tagged_guidance_content+")";
+              return d.name//+" ("+d.number_of_tagged_content+" / "+d.number_of_tagged_guidance_content+")";
           });
 
       // Change the circle fill depending on whether it has children and is collapsed
